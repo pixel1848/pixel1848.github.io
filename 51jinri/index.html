@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51今日爆料每日大赛-每日大赛爆料合集_今日爆料速览_热点爆料每日更新</title>
+<meta name="description" content="51今日爆料每日大赛是每日爆料资讯的集中浏览页：按日期整理今日爆料速览、爆料合集与热门话题，帮助读者快速了解每日大赛相关爆料的更新方向与查看方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M18 40 L28 22 L38 34 L46 24' stroke='%23f59e0b' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='46' cy='24' r='4' fill='%23f59e0b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-2:#1e293b;
+  --muted:#5b6779;
+  --line:#e2e8f0;
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --amber:#f59e0b;
+  --amber-deep:#b45309;
+  --teal:#0f766e;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  color:var(--ink-2);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* 头部 */
+.site-header{
+  background:var(--ink);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:3px solid var(--amber);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
+  flex-wrap:wrap;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:.5px;
+  color:#fff;
+}
+.logo-mark{
+  width:38px;height:38px;flex:0 0 38px;
+  border-radius:10px;
+  background:linear-gradient(140deg,#f59e0b,#b45309);
+  display:flex;align-items:center;justify-content:center;
+}
+.logo-mark svg{width:22px;height:22px;}
+.nav{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  font-size:14.5px;
+}
+.nav a{
+  padding:7px 12px;
+  border-radius:8px;
+  color:#cbd5e1;
+  transition:background .2s,color .2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.12);color:#fff;outline:none;}
+.nav a.primary{background:var(--amber);color:#1c1207;font-weight:600;}
+.nav a.primary:hover{background:#fbbf24;}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(245,158,11,.22),transparent 42%),
+    radial-gradient(circle at 8% 88%,rgba(15,118,110,.20),transparent 45%),
+    var(--ink);
+  color:#fff;
+  padding:52px 0 46px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.35fr .85fr;
+  gap:40px;
+  align-items:center;
+}
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  letter-spacing:1px;
+  color:#fcd34d;
+  border:1px solid rgba(252,211,77,.42);
+  padding:4px 12px;
+  border-radius:999px;
+  margin-bottom:16px;
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);}
+h1{
+  font-size:clamp(28px,4.2vw,44px);
+  line-height:1.25;
+  margin:0 0 16px;
+  letter-spacing:1px;
+  font-weight:800;
+}
+.hero p.lead{
+  margin:0 0 24px;
+  color:#cbd5e1;
+  font-size:16.5px;
+  max-width:36em;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:600;
+  border:1px solid transparent;
+  transition:transform .15s,background .2s;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-main{background:var(--amber);color:#1c1207;}
+.btn-main:hover{background:#fbbf24;}
+.btn-ghost{border-color:rgba(255,255,255,.34);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,.1);}
+.btn[aria-disabled="true"]{
+  background:rgba(255,255,255,.10);
+  color:#e2e8f0;
+  border-color:rgba(255,255,255,.22);
+  cursor:default;
+  pointer-events:none;
+}
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:30px;
+  border-top:1px solid rgba(255,255,255,.16);
+  padding-top:20px;
+  max-width:460px;
+}
+.hero-stats div strong{display:block;font-size:20px;color:#fcd34d;}
+.hero-stats div span{font-size:13px;color:#94a3b8;}
+
+/* 首屏侧栏卡片 */
+.brief-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);
+  padding:22px;
+  backdrop-filter:blur(4px);
+}
+.brief-card h2{
+  font-size:15px;
+  margin:0 0 14px;
+  color:#fcd34d;
+  letter-spacing:.5px;
+  font-weight:700;
+}
+.brief-list{list-style:none;margin:0;padding:0;font-size:14px;}
+.brief-list li{
+  display:flex;
+  gap:10px;
+  padding:9px 0;
+  border-bottom:1px dashed rgba(255,255,255,.13);
+  color:#dbe3ee;
+}
+.brief-list li:last-child{border-bottom:0;}
+.brief-list .no{
+  flex:0 0 22px;height:22px;border-radius:6px;
+  background:rgba(245,158,11,.2);color:#fcd34d;
+  font-size:12px;display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+}
+
+/* 通用区块 */
+section.block{padding:48px 0 8px;}
+.sec-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:22px;
+  flex-wrap:wrap;
+}
+.sec-head h2{
+  font-size:24px;
+  margin:0;
+  color:var(--ink);
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.sec-head h2::after{
+  content:"";
+  display:block;
+  width:44px;height:4px;
+  border-radius:2px;
+  background:var(--amber);
+  margin-top:8px;
+}
+.sec-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:46em;}
+
+/* 卡片网格 */
+.grid{display:grid;gap:18px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);
+  transition:box-shadow .2s,transform .2s,border-color .2s;
+}
+.card:hover{box-shadow:0 10px 26px -12px rgba(15,23,42,.22);transform:translateY(-2px);border-color:#cbd5e1;}
+.card h3{
+  font-size:17px;
+  margin:0 0 10px;
+  color:var(--ink);
+  font-weight:700;
+}
+.card p{margin:0;font-size:14.6px;color:#475569;}
+.tag{
+  display:inline-block;
+  font-size:12px;
+  padding:2px 9px;
+  border-radius:6px;
+  background:#fef3c7;
+  color:var(--amber-deep);
+  font-weight:600;
+  margin-bottom:10px;
+}
+.tag.teal{background:#ccfbf1;color:var(--teal);}
+.tag.gray{background:#eef2f7;color:#475569;}
+
+/* 今日爆料速览 主内容 */
+.feature{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:22px;
+  align-items:start;
+}
+.article-body h3{
+  font-size:19px;margin:26px 0 10px;color:var(--ink);
+}
+.article-body h3:first-child{margin-top:0;}
+.article-body p{margin:0 0 12px;color:#475569;font-size:15.4px;}
+.article-body ul{margin:0 0 14px;padding-left:20px;color:#475569;font-size:15.2px;}
+.article-body li{margin-bottom:6px;}
+.side-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+  position:sticky;
+  top:92px;
+}
+.side-box h3{font-size:16px;margin:0 0 12px;color:var(--ink);}
+.timeline{list-style:none;margin:0;padding:0;font-size:14px;}
+.timeline li{
+  position:relative;
+  padding:0 0 16px 20px;
+  border-left:2px solid #e2e8f0;
+  color:#475569;
+}
+.timeline li:last-child{border-left-color:transparent;padding-bottom:0;}
+.timeline li::before{
+  content:"";
+  position:absolute;left:-6px;top:6px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--amber);
+  border:2px solid #fff;
+  box-shadow:0 0 0 1px var(--amber);
+}
+.timeline b{display:block;color:var(--ink);font-size:14.4px;}
+
+/* 筛选/搜索 */
+.toolbar{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:20px;
+}
+.toolbar label{font-size:14px;color:var(--muted);}
+.toolbar input[type="search"]{
+  flex:1 1 220px;
+  min-width:0;
+  padding:9px 13px;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  font-size:14.5px;
+  color:var(--ink);
+  font-family:inherit;
+  background:#fbfcfe;
+}
+.toolbar input[type="search"]:focus{outline:2px solid rgba(245,158,11,.5);border-color:var(--amber);}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{
+  font-size:13.5px;
+  padding:6px 13px;
+  border-radius:999px;
+  border:1px solid #cbd5e1;
+  background:#fff;
+  color:#475569;
+  cursor:pointer;
+  font-family:inherit;
+  transition:all .18s;
+}
+.chip:hover{border-color:var(--amber);color:var(--amber-deep);}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;}
+.empty-tip{
+  display:none;
+  padding:26px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14.5px;
+  background:#fff;
+  border:1px dashed #cbd5e1;
+  border-radius:var(--radius);
+}
+
+/* 数据说明 */
+.note{
+  background:linear-gradient(120deg,#fffbeb,#f0fdfa);
+  border:1px solid #fde68a;
+  border-radius:var(--radius);
+  padding:22px 24px;
+  font-size:14.6px;
+  color:#475569;
+}
+.note strong{color:var(--ink);}
+
+/* 页尾 */
+footer{
+  margin-top:56px;
+  background:var(--ink);
+  color:#94a3b8;
+  padding:36px 0 26px;
+  font-size:14px;
+}
+.foot-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:26px;
+  padding-bottom:22px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.foot-grid h4{color:#fff;font-size:15px;margin:0 0 10px;font-weight:700;}
+.foot-grid p{margin:0 0 8px;line-height:1.7;}
+.foot-grid a{color:#cbd5e1;}
+.foot-grid a:hover{color:#fcd34d;}
+.copyright{padding-top:18px;font-size:13px;color:#64748b;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+
+@media (max-width:900px){
+  .hero-grid,.feature,.grid-3,.grid-2,.foot-grid{grid-template-columns:1fr;}
+  .side-box{position:static;}
+  .hero{padding:38px 0 34px;}
+  .hero-stats{max-width:none;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .header-inner{padding:12px 0;gap:10px;}
+  .logo{font-size:16.5px;}
+  .nav{font-size:13.5px;gap:4px;}
+  .nav a{padding:6px 9px;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  section.block{padding:36px 0 4px;}
+  .sec-head h2{font-size:20px;}
+  .card{padding:18px;}
+  .note{padding:18px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1c1207" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 17l5-7 4 5 3-4 6 6"/>
+        </svg>
+      </span>
+      <span>51今日爆料每日大赛</span>
+    </div>
+    <nav class="nav" aria-label="主导航">
+      <a href="#today">今日速览</a>
+      <a href="#topics">爆料合集</a>
+      <a href="#list">每日大赛</a>
+      <a href="#guide">查看说明</a>
+      <a class="primary" href="#today">进入今日爆料</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span>每日更新的爆料浏览页</span>
+        <h1>51今日爆料每日大赛</h1>
+        <p class="lead">这里按日期汇集今日爆料的公开速览，把分散的话题整理成可顺序阅读的合集。你可以先看今日要点，再按分类进入每日大赛相关的条目记录，了解每条爆料的话题方向与更新时间。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#today">阅读今日爆料速览</a>
+          <a class="btn btn-ghost" href="#list">浏览每日大赛条目</a>
+          <a class="btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>每日</strong><span>速览更新节奏</span></div>
+          <div><strong>按类</strong><span>话题归类浏览</span></div>
+          <div><strong>可查</strong><span>条目来源标注</span></div>
+        </div>
+      </div>
+      <aside class="brief-card" aria-label="今日要点">
+        <h2>今日要点速览</h2>
+        <ul class="brief-list">
+          <li><span class="no">01</span><span>今日爆料以话题合集形式呈现，按热度与更新顺序排列。</span></li>
+          <li><span class="no">02</span><span>每日大赛条目保留话题方向、更新时间和内容摘要。</span></li>
+          <li><span class="no">03</span><span>页面只做信息整理与索引，不替代原始出处。</span></li>
+          <li><span class="no">04</span><span>查看单条爆料时，请以对应来源的表述为准。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 今日速览 -->
+  <section class="block" id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日爆料速览</h2>
+        <p>把当天的爆料话题收拢到一处，先给结论式摘要，再展开阅读线索，适合想快速了解今日爆料整体走向的读者。</p>
+      </div>
+      <div class="feature">
+        <article class="card article-body">
+          <span class="tag">今日重点</span>
+          <h3>51今日爆料每日大赛的浏览逻辑</h3>
+          <p>打开51今日爆料每日大赛，最先看到的是今日爆料速览。它不追求把每条内容完整搬运，而是把当天讨论较多的话题整理成短摘要：谁在讨论、讨论什么、大致何时出现。这样做的目的，是让第一次来的读者在几分钟内建立整体印象，再决定深入哪一类。</p>
+          <p>速览之后是分类合集。今日爆料往往横跨多个领域，混在一起阅读容易失去重点，因此页面按月度和分类两个维度归档，让同一类话题可以连续对比。对关注每日大赛的读者来说，连续几天的同类条目放在一起，比单条孤立浏览更容易看出变化。</p>
+          <h3>每日大赛条目如何记录</h3>
+          <p>每日大赛相关条目在页面中以卡片形式出现，每张卡片包含话题方向、更新时间与一句摘要。卡片不渲染结论性判断，只呈现可核对的信息。若某条内容存在多个出处，页面会在摘要末尾标注来源类型，便于读者回到原始出处复核。</p>
+          <ul>
+            <li>话题方向：用短标签标注所属类别，便于筛选。</li>
+            <li>更新时间：记录条目进入合集的时间，不做推断。</li>
+            <li>内容摘要：一句话概括主要讨论点，不添加评价。</li>
+            <li>来源标注：保留出处类型，方便进一步查阅。</li>
+          </ul>
+          <p>需要说明的是，51今日爆料每日大赛是资讯整理页，不是原始发布渠道。页面提供的是索引与摘要，具体表述、细节与后续进展，都以来源方的说明为准。这一点在阅读时值得留意。</p>
+        </article>
+        <aside class="side-box">
+          <h3>更新节奏</h3>
+          <ul class="timeline">
+            <li><b>上午 · 速览整理</b>汇总前一日晚间至当日清晨的话题。</li>
+            <li><b>午后 · 分类补充</b>按领域补充条目，完善标签。</li>
+            <li><b>晚间 · 合集归档</b>归入当月合集，更新索引顺序。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 爆料合集 -->
+  <section class="block" id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>爆料合集</h2>
+        <p>按话题领域划分的合集入口。每类承担不同的浏览任务，方便读者从熟悉的方向进入今日爆料。</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="tag">热点类</span>
+          <h3>热点话题合集</h3>
+          <p>收录讨论度上升较快的话题条目，按出现时间排序。适合想快速掌握今日爆料主要方向的读者，条目附简要背景说明。</p>
+        </article>
+        <article class="card">
+          <span class="tag teal">赛事类</span>
+          <h3>每日大赛条目</h3>
+          <p>围绕每日大赛的条目记录，侧重赛程节点与话题变化。每条保留更新时间和话题标签，便于按日期对照阅读。</p>
+        </article>
+        <article class="card">
+          <span class="tag gray">回顾类</span>
+          <h3>往期爆料回顾</h3>
+          <p>将此前整理过的条目按月归档，供回看与比对。回顾页不重写内容，只保留当时的时间标记与摘要。</p>
+        </article>
+        <article class="card">
+          <span class="tag">线索类</span>
+          <h3>话题线索整理</h3>
+          <p>把零散出现的线索按主题归并，标注彼此关联。适合希望顺着一条线索继续查找的读者。</p>
+        </article>
+        <article class="card">
+          <span class="tag teal">合集类</span>
+          <h3>多来源对照</h3>
+          <p>同一话题出现多个出处时，页面并列列出摘要与来源类型，方便读者自行对照，不代替来源下结论。</p>
+        </article>
+        <article class="card">
+          <span class="tag gray">查询类</span>
+          <h3>关键词检索</h3>
+          <p>通过下方搜索框按关键词筛选条目，结果即时显示。搜索只匹配标题与摘要文字，不影响原始出处的表述。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 每日大赛列表 + 筛选 -->
+  <section class="block" id="list">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>每日大赛条目</h2>
+        <p>以下条目按分类展示，可输入关键词即时筛选。条目内容为摘要索引，具体信息以来源为准。</p>
+      </div>
+
+      <div class="toolbar" role="search">
+        <label for="kw">关键词</label>
+        <input type="search" id="kw" placeholder="输入话题关键词，如：合集、赛程、热点" autocomplete="off">
+        <div class="chips" role="group" aria-label="分类筛选">
+          <button class="chip" type="button" data-cat="all" aria-pressed="true">全部</button>
+          <button class="chip" type="button" data-cat="热点" aria-pressed="false">热点</button>
+          <button class="chip" type="button" data-cat="赛事" aria-pressed="false">赛事</button>
+          <button class="chip" type="button" data-cat="回顾" aria-pressed="false">回顾</button>
+        </div>
+      </div>
+
+      <div class="grid grid-2" id="entryGrid">
+        <article class="card entry" data-cat="热点">
+          <span class="tag">热点</span>
+          <h3>今日爆料速览 · 话题集中度变化</h3>
+          <p>近期今日爆料的讨论集中在少数几个话题上，速览页按集中度排序，先列讨论较密集的条目，再补充其余内容。</p>
+        </article>
+        <article class="card entry" data-cat="赛事">
+          <span class="tag teal">赛事</span>
+          <h3>每日大赛条目 · 节点整理</h3>
+          <p>每日大赛相关条目按节点排列，每个节点记录时间与一句摘要，便于对照前后变化，不做结果推断。</p>
+        </article>
+        <article class="card entry" data-cat="回顾">
+          <span class="tag gray">回顾</span>
+          <h3>往期合集 · 按月归档</h3>
+          <p>往期内容以月为单位归档，保留当时的摘要与时间标记，方便回看51今日爆料每日大赛的历史整理顺序。</p>
+        </article>
+        <article class="card entry" data-cat="热点">
+          <span class="tag">热点</span>
+          <h3>多来源摘要对照</h3>
+          <p>同一话题若有多个出处，条目会并列列出摘要与来源类型，读者可据此回到原始出处核对细节。</p>
+        </article>
+        <article class="card entry" data-cat="赛事">
+          <span class="tag teal">赛事</span>
+          <h3>大赛话题标签说明</h3>
+          <p>标签用于快速定位条目所属方向，标签本身不含评价含义，仅作为分类索引使用。</p>
+        </article>
+        <article class="card entry" data-cat="回顾">
+          <span class="tag gray">回顾</span>
+          <h3>合集更新记录</h3>
+          <p>合集每次归档会保留一条更新记录，说明新增条目数量与归档时间，便于判断内容的新旧程度。</p>
+        </article>
+      </div>
+      <p class="empty-tip" id="emptyTip">没有匹配的条目，换个关键词或切换分类试试。</p>
+
+      <div class="note" style="margin-top:22px;">
+        <strong>阅读提示：</strong>51今日爆料每日大赛页面中的条目均为摘要与索引，用于帮助读者定位话题。涉及具体事实、数字与后续进展时，请以条目标注的来源为准。页面不提供下载内容包，下载入口将在资源就绪后开放。
+      </div>
+    </div>
+  </section>
+
+  <!-- 查看说明 -->
+  <section class="block" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>查看说明</h2>
+        <p>几条实用建议，帮助你在51今日爆料每日大赛里更快找到需要的内容。</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>先速览，再深入</h3>
+          <p>时间有限时先读今日爆料速览，建立整体印象；对某条感兴趣，再用关键词或分类进入条目列表。</p>
+        </article>
+        <article class="card">
+          <h3>用标签缩小范围</h3>
+          <p>分类标签对应不同话题方向，点击即可筛选。结合关键词搜索，可以更快定位到具体条目。</p>
+        </article>
+        <article class="card">
+          <h3>回到来源核对</h3>
+          <p>摘要只保留要点，细节与表述以来源为准。遇到需要确认的信息，建议回到原始出处查看。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>51今日爆料每日大赛</h4>
+        <p>每日爆料资讯的整理与索引页，按日期与分类汇集今日爆料速览、爆料合集和每日大赛相关条目。</p>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <p><a href="#today">今日爆料速览</a></p>
+        <p><a href="#topics">爆料合集</a></p>
+        <p><a href="#list">每日大赛条目</a></p>
+        <p><a href="#guide">查看说明</a></p>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <p>条目为摘要索引，具体信息以来源为准。</p>
+        <p>下载入口暂未开放，后续更新。</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2025 51今日爆料每日大赛 · 资讯整理页</span>
+      <span>内容仅供浏览参考</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var kw = document.getElementById('kw');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var entries = Array.prototype.slice.call(document.querySelectorAll('.entry'));
+  var emptyTip = document.getElementById('emptyTip');
+  var currentCat = 'all';
+
+  function apply(){
+    var q = (kw.value || '').trim().toLowerCase();
+    var visible = 0;
+    entries.forEach(function(el){
+      var cat = el.getAttribute('data-cat') || '';
+      var text = el.textContent.toLowerCase();
+      var okCat = (currentCat === 'all') || (cat === currentCat);
+      var okKw = !q || text.indexOf(q) !== -1;
+      var show = okCat && okKw;
+      el.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    emptyTip.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  kw.addEventListener('input', apply);
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      currentCat = btn.getAttribute('data-cat');
+      chips.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
+</body>
+</html>
