@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51视频网页版-网页版在线观看入口_无需下载直接看_视频资源导航</title>
+<meta name="description" content="51视频网页版是面向浏览器访问的视频内容入口站，整理网页版在线观看方式、无需下载直接看的访问路径与视频资源分类导航，帮助你在电脑与手机上快速找到想看的内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Cpath d='M26 20l18 12-18 12z' fill='%23ff5a3c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#111a2b;
+  --ink-2:#1c2740;
+  --paper:#f6f7fa;
+  --card:#ffffff;
+  --line:#e3e7ef;
+  --text:#28324a;
+  --muted:#66718c;
+  --accent:#ff5a3c;
+  --accent-2:#ffb03a;
+  --blue:#2f6df6;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{width:min(1140px,92vw);margin:0 auto;}
+img,svg{display:block;max-width:100%;}
+
+/* 页头 */
+header.site{
+  background:var(--ink);
+  color:#fff;
+  position:sticky;top:0;z-index:50;
+  box-shadow:0 2px 18px rgba(17,26,43,.22);
+}
+.head-inner{
+  display:flex;align-items:center;gap:26px;
+  padding:12px 0;
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;white-space:nowrap;}
+.logo .mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(140deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.logo .mark svg{width:16px;height:16px;}
+nav.main{margin-left:auto;}
+nav.main ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;}
+nav.main a{color:#c9d2e4;padding:4px 0;border-bottom:2px solid transparent;transition:color .18s,border-color .18s;}
+nav.main a:hover,nav.main a:focus-visible{color:#fff;border-bottom-color:var(--accent);outline:none;}
+.head-cta{
+  background:var(--accent);color:#fff;font-weight:700;font-size:14px;
+  padding:9px 18px;border-radius:999px;white-space:nowrap;
+}
+.head-cta:hover{background:#ff6f54;}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(900px 380px at 85% -10%,rgba(47,109,246,.28),transparent 70%),
+    radial-gradient(700px 300px at 0% 0%,rgba(255,90,60,.22),transparent 65%),
+    var(--ink);
+  color:#eef2fa;
+  padding:52px 0 58px;
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:44px;align-items:center;}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:#ffcfb9;background:rgba(255,90,60,.14);
+  border:1px solid rgba(255,90,60,.42);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block;}
+h1{
+  font-size:clamp(28px,3.6vw,44px);
+  line-height:1.25;margin:0 0 16px;font-weight:800;letter-spacing:.5px;
+}
+.hero p.lead{font-size:16.5px;color:#c3cde0;margin:0 0 26px;max-width:34em;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:999px;font-weight:700;font-size:15px;
+  border:1px solid transparent;transition:transform .15s,background .18s;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#ff6f54;}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#e8eefb;}
+.btn-ghost:hover{background:rgba(255,255,255,.1);}
+.hero-facts{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap;}
+.hero-facts div strong{display:block;font-size:22px;color:#fff;font-weight:800;}
+.hero-facts div span{font-size:13px;color:#9fabc4;}
+
+/* 播放器造型插画 */
+.player-card{
+  background:linear-gradient(160deg,#22304d,#151e31);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:14px;
+  box-shadow:0 24px 50px rgba(0,0,0,.38);
+}
+.player-screen{
+  border-radius:12px;overflow:hidden;position:relative;
+  background:radial-gradient(320px 180px at 50% 40%,#33456b,#141c2d);
+  aspect-ratio:16/9;display:grid;place-items:center;
+}
+.player-screen .play{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(255,90,60,.92);
+  display:grid;place-items:center;
+  box-shadow:0 0 0 10px rgba(255,90,60,.18);
+}
+.player-screen .play svg{width:22px;height:22px;margin-left:3px;}
+.player-bar{display:flex;align-items:center;gap:10px;margin-top:12px;}
+.player-bar .track{flex:1;height:5px;border-radius:99px;background:#2b364f;overflow:hidden;}
+.player-bar .track i{display:block;height:100%;width:46%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;}
+.player-bar span{font-size:12px;color:#8b98b4;letter-spacing:.5px;}
+
+/* 通用区块 */
+section{padding:56px 0;}
+.sec-head{margin-bottom:28px;max-width:44em;}
+.sec-head .kicker{
+  font-size:13px;font-weight:700;color:var(--accent);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;
+}
+h2{font-size:clamp(21px,2.3vw,27px);margin:0 0 10px;color:var(--ink);font-weight:800;}
+.sec-head p{margin:0;color:var(--muted);font-size:15.5px;}
+
+/* 入口卡片 */
+.entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.entry{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px 20px;transition:border-color .18s,box-shadow .18s,transform .18s;
+}
+.entry:hover{border-color:#c8d2e4;box-shadow:0 14px 30px rgba(28,39,64,.08);transform:translateY(-2px);}
+.entry .ico{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  background:#eef3ff;color:var(--blue);margin-bottom:14px;
+}
+.entry .ico svg{width:20px;height:20px;}
+.entry h3{margin:0 0 8px;font-size:17px;color:var(--ink);font-weight:800;}
+.entry p{margin:0 0 14px;font-size:14.5px;color:var(--muted);}
+.entry .go{font-size:14px;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:5px;}
+.entry .go svg{width:13px;height:13px;}
+
+/* 内容分区 + 侧栏 */
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:34px;align-items:start;}
+.article-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;}
+.article-card h3{margin:0 0 12px;font-size:19px;color:var(--ink);font-weight:800;}
+.article-card p{margin:0 0 14px;font-size:15.5px;color:#3b465e;}
+.article-card p:last-child{margin-bottom:0;}
+.callout{
+  margin-top:18px;padding:14px 16px;border-radius:12px;
+  background:#fff6f2;border-left:4px solid var(--accent);
+  font-size:14.5px;color:#8a3a26;
+}
+.side-card{background:var(--ink);color:#dbe3f2;border-radius:var(--radius);padding:24px 24px 22px;}
+.side-card h3{margin:0 0 14px;font-size:16px;color:#fff;font-weight:800;}
+.side-card ul{list-style:none;margin:0;padding:0;font-size:14.5px;}
+.side-card li{padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.14);color:#b9c4da;}
+.side-card li:last-child{border-bottom:none;}
+.side-card li b{color:#fff;font-weight:700;}
+.side-card .note{margin-top:14px;font-size:12.5px;color:#8d9ab5;}
+
+/* 分类导航 */
+.chips{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:8px 16px;font-size:14px;color:#3b465e;font-weight:600;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+
+/* 问答 */
+.faq{display:grid;gap:14px;}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;}
+.qa h3{margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:800;}
+.qa p{margin:0;font-size:15px;color:var(--muted);}
+
+/* 下载块 */
+.dl{
+  background:linear-gradient(140deg,#1d2942,#111a2b);
+  color:#e8eefb;border-radius:22px;padding:38px 40px;
+  display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.dl h2{color:#fff;margin-bottom:8px;}
+.dl p{margin:0;color:#a8b4cc;font-size:15px;max-width:40em;}
+.dl .btn-disabled{
+  background:#2c3a57;color:#9aa7c1;cursor:not-allowed;pointer-events:none;
+  border:1px solid #3a4a6b;
+}
+.dl small{display:block;margin-top:9px;font-size:12.5px;color:#7f8daa;width:100%;}
+
+/* 页尾 */
+footer.site{background:var(--ink);color:#9fabc4;padding:40px 0 30px;font-size:14px;}
+.foot-top{display:flex;gap:26px;justify-content:space-between;flex-wrap:wrap;align-items:flex-start;}
+.foot-brand{max-width:26em;}
+.foot-brand .logo{color:#fff;margin-bottom:10px;}
+.foot-brand p{margin:0;color:#8b98b4;font-size:13.5px;line-height:1.8;}
+.foot-links{display:flex;gap:44px;flex-wrap:wrap;}
+.foot-links div h4{margin:0 0 10px;font-size:13.5px;color:#fff;font-weight:700;}
+.foot-links ul{list-style:none;margin:0;padding:0;font-size:13.5px;}
+.foot-links li{margin-bottom:7px;}
+.foot-links a:hover{color:#fff;}
+.foot-bottom{
+  margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-size:12.5px;color:#7f8daa;
+}
+
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .entry-grid{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .head-inner{gap:14px;padding:10px 0;}
+  nav.main{margin-left:0;order:3;width:100%;overflow-x:auto;}
+  nav.main ul{gap:16px;font-size:14px;white-space:nowrap;}
+  .head-cta{margin-left:auto;padding:8px 15px;font-size:13px;}
+  .hero{padding:34px 0 40px;}
+  .hero-facts{gap:22px;margin-top:26px;}
+  .hero-facts div strong{font-size:19px;}
+  .entry-grid{grid-template-columns:1fr;}
+  section{padding:40px 0;}
+  .article-card{padding:22px 20px;}
+  .dl{padding:28px 22px;border-radius:18px;}
+  .qa{padding:17px 18px;}
+  .foot-links{gap:30px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="51视频网页版首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg>
+      </span>
+      51视频网页版
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#entry">网页版入口</a></li>
+        <li><a href="#guide">观看指南</a></li>
+        <li><a href="#cate">内容分类</a></li>
+        <li><a href="#faq">常见问答</a></li>
+        <li><a href="#download">下载说明</a></li>
+      </ul>
+    </nav>
+    <a class="head-cta" href="#entry">进入网页版</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><i></i>浏览器直接访问 · 免安装</span>
+        <h1>51视频网页版</h1>
+        <p class="lead">51视频网页版把观看入口放在浏览器里：打开网页即可浏览视频内容、切换分类，不必先装客户端。本页梳理网页版的使用路径、内容组织方式与常见问题，帮你少走弯路。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entry">查看网页版入口
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#guide">先看观看指南</a>
+        </div>
+        <div class="hero-facts">
+          <div><strong>3 种</strong><span>主要访问方式</span></div>
+          <div><strong>6 类</strong><span>内容分类方向</span></div>
+          <div><strong>0 安装</strong><span>浏览器内完成</span></div>
+        </div>
+      </div>
+      <div class="player-card" aria-hidden="true">
+        <div class="player-screen">
+          <div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="player-bar">
+          <span>WEB</span>
+          <div class="track"><i></i></div>
+          <span>HD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 网页版入口 -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Access</div>
+        <h2>51视频网页版的三种进入方式</h2>
+        <p>根据设备与网络环境选择合适入口：电脑浏览器、手机浏览器、以及把页面添加到主屏的快捷方式。三条路径都指向同一个网页版，不需要额外安装。</p>
+      </div>
+      <div class="entry-grid">
+        <article class="entry">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>电脑浏览器访问</h3>
+          <p>在桌面浏览器地址栏输入网址即可加载网页版，适合大屏观看与多标签切换，播放区域与分类列表同时可见。</p>
+          <span class="go">从地址栏开始
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </span>
+        </article>
+        <article class="entry">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+          </div>
+          <h3>手机浏览器访问</h3>
+          <p>手机端页面会按屏幕宽度重排，分类卡片改为单列，横向滑动浏览更顺手。建议横屏观看，画面比例更完整。</p>
+          <span class="go">适配小屏阅读
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </span>
+        </article>
+        <article class="entry">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><rect x="4" y="15" width="16" height="6" rx="2"/></svg>
+          </div>
+          <h3>添加到主屏</h3>
+          <p>在手机浏览器菜单中选择“添加到主屏幕”，之后从桌面图标直接进入网页版，省去每次输入网址的步骤。</p>
+          <span class="go">减少重复输入
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看指南 + 侧栏 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Guide</div>
+        <h2>用 51视频网页版看片前，先了解这几件事</h2>
+        <p>网页版的核心是“打开即用”，但实际体验受网络、浏览器版本与设备性能影响。下面几条是访问前最值得确认的细节。</p>
+      </div>
+      <div class="split">
+        <article class="article-card">
+          <h3>访问前的准备清单</h3>
+          <p>先用较新版本的 Chrome、Edge、Safari 或主流国产浏览器打开页面，旧版内核可能在播放区域出现排版错位。其次确认网络稳定，播放卡顿时优先切换网络而非反复刷新。</p>
+          <p>页面分类与播放区域是分开加载的，进入网页版后可以先浏览分类，再决定看什么。若页面长时间停在加载状态，检查浏览器是否拦截了脚本或开启了严格的省流模式。</p>
+          <p>手机端建议关闭“仅 Wi-Fi 播放”之外的省流设置，横屏时隐藏地址栏能获得更大的可视区域。需要临时离开时，记住当前分类位置比记住单个链接更实用。</p>
+          <div class="callout">提示：51视频网页版的内容与入口可能随运营调整而变化，本页描述的是网页版的一般使用方式，具体页面以实际打开时为准。</div>
+        </article>
+        <aside class="side-card">
+          <h3>常见访问组合</h3>
+          <ul>
+            <li><b>电脑 + Wi-Fi</b>：大屏观看，分类与播放同屏</li>
+            <li><b>手机 + 移动网络</b>：随时打开，注意流量消耗</li>
+            <li><b>平板横屏</b>：介于两者之间，触控翻分类</li>
+            <li><b>主屏快捷方式</b>：减少输入，适合固定设备</li>
+          </ul>
+          <p class="note">以上为访问方式归纳，不代表任何播放质量或内容数量承诺。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容分类 -->
+  <section id="cate">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Category</div>
+        <h2>网页版里的内容怎么找</h2>
+        <p>51视频网页版通常以分类列表组织内容，先定方向再挑具体条目，比漫无目的翻页更高效。下面列出常见的浏览方向，具体以站内实际分类为准。</p>
+      </div>
+      <div class="chips">
+        <a class="chip" href="#entry">推荐列表</a>
+        <a class="chip" href="#entry">最近更新</a>
+        <a class="chip" href="#entry">热门排行</a>
+        <a class="chip" href="#entry">短片段</a>
+        <a class="chip" href="#entry">专题合集</a>
+        <a class="chip" href="#entry">收藏回看</a>
+        <a class="chip" href="#entry">搜索直达</a>
+        <a class="chip" href="#entry">历史记录</a>
+      </div>
+      <div class="article-card" style="margin-top:24px;">
+        <h3>两个实用的小习惯</h3>
+        <p>第一，善用搜索框而不是层层点分类。知道关键词时直接输入，能跳过中间层级；搜索结果页再按更新时间排序，找新内容更快。</p>
+        <p>第二，把常看的方向加入收藏或历史记录，下次进入 51视频网页版时直接从侧栏进入，避免每次从头浏览。分类本身也会随更新变化，隔一段时间重新看一遍推荐列表，往往能发现新的内容方向。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 问答 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于 51视频网页版的常见疑问</h2>
+        <p>这里回答访问过程中最容易遇到的几个问题，答案基于网页版的一般运行方式，不涉及具体内容推荐。</p>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h3>网页版需要注册或登录吗？</h3>
+          <p>浏览与播放一般无需登录即可进行，收藏、历史记录等个人化功能是否需要账号，取决于站内设置。若页面提示登录，按提示操作即可。</p>
+        </div>
+        <div class="qa">
+          <h3>为什么手机上打开后排版和电脑不一样？</h3>
+          <p>这是响应式布局的正常表现。手机屏幕较窄，分类卡片会改为单列排列，播放区域占满宽度，阅读顺序与桌面端一致，只是纵向更长。</p>
+        </div>
+        <div class="qa">
+          <h3>51视频网页版和客户端有什么区别？</h3>
+          <p>网页版无需安装、更新由服务端完成，换设备打开即用；客户端通常有更强的本地缓存能力。若只是临时观看，网页版更省事。</p>
+        </div>
+        <div class="qa">
+          <h3>页面打不开时怎么办？</h3>
+          <p>先换一个浏览器或网络环境重试，再确认地址是否输入正确。若仍无法访问，可能是入口调整，可通过站内公告或其他官方渠道获取最新地址。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h2>下载 51视频网页版访问入口</h2>
+          <p>把网页版入口信息保存到本地，方便下次直接打开。下载内容为入口说明文件，不包含视频资源。当前下载地址尚在配置中，开放后即可获取。</p>
+          <small>说明：按钮暂处禁用状态，待正式地址上线后启用。</small>
+        </div>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </span>
+          51视频网页版
+        </a>
+        <p>51视频网页版是一个面向浏览器的视频内容入口页面，整理网页版访问方式、观看指南与分类导航，帮助你在电脑和手机上快速开始。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>页面导航</h4>
+          <ul>
+            <li><a href="#entry">网页版入口</a></li>
+            <li><a href="#guide">观看指南</a></li>
+            <li><a href="#cate">内容分类</a></li>
+            <li><a href="#faq">常见问答</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>使用提示</h4>
+          <ul>
+            <li><a href="#guide">访问前准备</a></li>
+            <li><a href="#cate">搜索与收藏</a></li>
+            <li><a href="#download">入口下载</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 51视频网页版 · 页面内容为访问指引说明</span>
+      <span>请在各地区法律法规允许的范围内使用本页面信息</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+            </html>
