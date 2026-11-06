@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yandex官网入口网址-官网入口网址登录地址_搜索引擎访问入口</title>
+<meta name="description" content="整理 yandex 官网入口网址的访问信息，说明官网入口地址的识别方法、搜索引擎与邮箱等常用服务的进入路径，以及访问中常见问题的处理思路，帮助访客找到正确的入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e02b20'/%3E%3Cpath d='M22 16h12c7 0 11 4 11 10 0 5-3 8-7 9l8 13h-8l-7-12h-3v12h-6V16zm6 5v10h5c3 0 5-2 5-5s-2-5-5-5h-5z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --red:#e02b20;
+    --red-dark:#b81e15;
+    --ink:#1b1c20;
+    --ink-2:#41444d;
+    --muted:#6b6f7a;
+    --line:#e6e7eb;
+    --bg:#fafafa;
+    --card:#ffffff;
+    --soft:#fff4f2;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--red-dark);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:18px;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--ink);letter-spacing:.2px}
+  .logo:hover{text-decoration:none;color:var(--red-dark)}
+  .logo-mark{width:34px;height:34px;flex:0 0 34px;border-radius:9px;background:var(--red);display:grid;place-items:center}
+  .logo-mark svg{width:20px;height:20px}
+  nav.main{margin-left:auto;display:flex;gap:22px;font-size:15px}
+  nav.main a{color:var(--ink-2)}
+  nav.main a:hover{color:var(--red-dark);text-decoration:none}
+  .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:9px;padding:7px 10px;cursor:pointer}
+  .burger span{display:block;width:18px;height:2px;background:var(--ink);margin:4px 0;border-radius:2px}
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 88% -10%, rgba(224,43,32,.10), transparent 62%),
+      linear-gradient(180deg,#fff 0%,var(--bg) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;padding:58px 0 56px}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--soft);color:var(--red-dark);
+    border:1px solid #f6d3ce;border-radius:999px;
+    font-size:13px;padding:4px 12px;margin-bottom:18px;font-weight:600;
+  }
+  h1{font-size:34px;line-height:1.35;letter-spacing:.3px;font-weight:800;margin-bottom:16px}
+  .hero p.lead{color:var(--ink-2);font-size:16.5px;max-width:36em;margin-bottom:24px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--red);color:#fff}
+  .btn-primary:hover{background:var(--red-dark);text-decoration:none;color:#fff}
+  .btn-ghost{background:#fff;border-color:#dcdde2;color:var(--ink)}
+  .btn-ghost:hover{border-color:#b9bbc4;text-decoration:none;color:var(--ink)}
+  .btn[aria-disabled="true"]{opacity:.55;cursor:default}
+  .hero-note{margin-top:16px;font-size:13.5px;color:var(--muted)}
+
+  .hero-art{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:22px;box-shadow:0 18px 44px -28px rgba(27,28,32,.35);
+  }
+  .hero-art .art-head{display:flex;gap:6px;margin-bottom:14px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#e3e4e8}
+  .dot.r{background:#f0a49d}
+  .searchbox{display:flex;border:1.6px solid var(--red);border-radius:999px;overflow:hidden;margin-bottom:14px}
+  .searchbox svg{width:18px;height:18px;margin:0 0 0 14px;align-self:center;flex:0 0 18px;fill:var(--muted)}
+  .searchbox input{border:0;outline:none;padding:11px 8px;flex:1;font-size:14.5px;background:transparent;color:var(--ink);min-width:0}
+  .searchbox button{border:0;background:var(--red);color:#fff;padding:0 18px;font-size:14px;cursor:pointer;font-weight:600}
+  .searchbox button:hover{background:var(--red-dark)}
+  .art-lines{display:grid;gap:9px}
+  .art-line{height:11px;border-radius:6px;background:#f0f1f4}
+  .art-line.w1{width:88%}
+  .art-line.w2{width:70%}
+  .art-line.w3{width:94%}
+  .art-line.w4{width:58%}
+  .art-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-size:12.5px;background:#f6f7f9;border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--ink-2)}
+
+  /* Section base */
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:28px;max-width:46em}
+  .sec-kicker{color:var(--red-dark);font-size:13px;font-weight:700;letter-spacing:1.5px;margin-bottom:8px}
+  h2{font-size:24px;font-weight:800;letter-spacing:.2px;line-height:1.4}
+  .sec-head p{color:var(--ink-2);margin-top:10px}
+  h3{font-size:17px;font-weight:700;margin-bottom:8px}
+  p.body{color:var(--ink-2);margin-bottom:12px}
+
+  /* Cards */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:border-color .2s,box-shadow .2s;
+  }
+  .card:hover{border-color:#d3d5dc;box-shadow:0 12px 30px -24px rgba(27,28,32,.5)}
+  .card .ico{width:38px;height:38px;border-radius:10px;background:var(--soft);display:grid;place-items:center;margin-bottom:14px}
+  .card .ico svg{width:20px;height:20px;fill:var(--red)}
+  .card p{color:var(--ink-2);font-size:14.8px}
+  .card ul{margin:10px 0 0 18px;color:var(--ink-2);font-size:14.6px}
+  .card ul li{margin:4px 0}
+
+  /* Steps */
+  .steps{counter-reset:s;display:grid;gap:14px}
+  .step{
+    display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;
+  }
+  .step::before{
+    counter-increment:s;content:counter(s);
+    width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;
+    display:grid;place-items:center;font-weight:700;font-size:15px;
+  }
+  .step h3{margin-bottom:4px}
+  .step p{color:var(--ink-2);font-size:14.8px}
+
+  /* FAQ */
+  .faq{display:grid;gap:12px}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 20px;
+  }
+  details[open]{border-color:#e5b8b2;background:#fffcfb}
+  summary{
+    list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;
+    font-weight:700;font-size:15.5px;color:var(--ink);
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"";position:absolute;right:0;top:50%;width:9px;height:9px;
+    border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:translateY(-70%) rotate(45deg);transition:transform .2s;
+  }
+  details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+  details .ans{padding:0 0 18px;color:var(--ink-2);font-size:14.8px}
+
+  /* Notice */
+  .notice{
+    background:var(--soft);border:1px solid #f6d3ce;border-radius:var(--radius);
+    padding:22px 24px;color:var(--ink-2);font-size:14.8px;
+  }
+  .notice strong{color:var(--red-dark)}
+
+  /* Footer */
+  footer.site{background:#16171b;color:#b7bac3;padding:44px 0 30px;font-size:14px}
+  footer.site .f-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid #2b2d34}
+  footer.site .f-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:16px;margin-bottom:12px}
+  footer.site .f-brand .logo-mark{background:var(--red)}
+  footer.site h4{color:#fff;font-size:14px;margin-bottom:12px;font-weight:700}
+  footer.site ul{list-style:none;display:grid;gap:8px}
+  footer.site a{color:#b7bac3}
+  footer.site a:hover{color:#fff;text-decoration:none}
+  footer.site .f-bottom{padding-top:20px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:#82858f;font-size:13px}
+
+  /* Mobile */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;padding:40px 0 44px}
+    .grid-3{grid-template-columns:1fr 1fr}
+    footer.site .f-top{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px}
+    .bar{height:60px}
+    nav.main{
+      display:none;position:absolute;top:60px;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--line);
+      flex-direction:column;gap:0;padding:6px 20px 14px;margin-left:0;
+    }
+    nav.main.open{display:flex}
+    nav.main a{padding:10px 0;border-bottom:1px solid #f2f3f5}
+    .burger{display:block}
+    h1{font-size:26px}
+    h2{font-size:21px}
+    .hero-grid{padding:32px 0 38px}
+    section{padding:40px 0}
+    .grid-3,.grid-2{grid-template-columns:1fr}
+    .card{padding:20px}
+    .step{grid-template-columns:36px 1fr;padding:18px}
+    .cta .btn{flex:1 1 auto;justify-content:center}
+    footer.site .f-top{grid-template-columns:1fr;gap:24px}
+    .logo{font-size:15.5px}
+    .logo-mark{width:30px;height:30px;flex-basis:30px}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="yandex官网入口网址 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 4h5c2.8 0 4.6 1.7 4.6 4.2 0 2-1.2 3.3-2.9 3.8l3.3 5.4h-3.4l-2.9-5h-1.2v5H8V4zm2.5 2.1v4.2h2.1c1.3 0 2.1-.8 2.1-2.1s-.8-2.1-2.1-2.1h-2.1z" fill="#fff"/></svg>
+      </span>
+      yandex官网入口网址
+    </a>
+    <button class="burger" id="burger" aria-label="展开导航" aria-expanded="false" aria-controls="mainnav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#entry">入口说明</a>
+      <a href="#services">常用服务</a>
+      <a href="#steps">访问步骤</a>
+      <a href="#faq">常见问题</a>
+      <a href="#safe">辨别提示</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag">入口信息整理 · 访问路径说明</span>
+        <h1>yandex官网入口网址</h1>
+        <p class="lead">本页围绕 yandex官网入口网址 做集中说明：入口地址应当如何确认、进入之后可以使用哪些服务、访问中出现打不开或跳转异常时怎样判断。内容按访问顺序组织，便于直接对照使用。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#entry">查看入口说明
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#steps">按步骤访问</a>
+        </div>
+        <p class="hero-note">页面为入口信息整理，不提供账号代登录，也不要求填写任何密码。</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-head"><span class="dot r"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="searchbox">
+          <svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 10 3zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+          <input type="text" value="yandex 官网入口" readonly tabindex="-1" aria-label="示意图">
+          <button type="button" tabindex="-1">搜索</button>
+        </div>
+        <div class="art-lines">
+          <div class="art-line w1"></div>
+          <div class="art-line w2"></div>
+          <div class="art-line w3"></div>
+          <div class="art-line w4"></div>
+        </div>
+        <div class="art-chips">
+          <span class="chip">搜索</span>
+          <span class="chip">邮箱</span>
+          <span class="chip">地图</span>
+          <span class="chip">云盘</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 入口说明 -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">入口说明</div>
+        <h2>yandex官网入口网址指向什么</h2>
+        <p>Yandex 是一家以搜索引擎起家的互联网服务公司，其主站同时是搜索入口和旗下多项服务的聚合页。因此“yandex官网入口网址”通常指主站首页地址，从这里可以进入搜索、邮箱、地图、云盘等不同产品。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 10 3zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg></div>
+          <h3>主站即入口</h3>
+          <p>主站首页承担搜索框与导航功能，是寻找 yandex官网入口网址 时最直接的落点，无需再经第三方中转页。</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2c1.6 0 3 2.2 3.6 5.6H8.4C9 6.2 10.4 4 12 4zM4.3 9.6h3.6c-.2 1.3-.3 2.6-.3 4s.1 2.7.3 4H4.3A8 8 0 0 1 3.5 12c0-1 .3-2 .8-2.4zM6.4 19h3.5c-.5 1.7-1.2 2.6-2 2.6-.6 0-1.1-.9-1.5-2.6z"/></svg></div>
+          <h3>区域与语言</h3>
+          <p>主站会按访问地区与浏览器语言呈现不同界面，域名后缀也可能不同。确认页面为该公司的官方界面，比记住某一条具体链接更稳妥。</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4zm0 2.2 6 3v4.8c0 3.8-2.4 6.7-6 8-3.6-1.3-6-4.2-6-8V7.2l6-3z"/></svg></div>
+          <h3>入口的唯一性</h3>
+          <p>官方入口只有一个主站体系，凡是以“加速版”“内部版”名义要求额外安装插件或填写密码的页面，都不属于正规入口。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常用服务 -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">常用服务</div>
+        <h2>从入口进入后可以做什么</h2>
+        <p>确认 yandex官网入口网址 之后，多数访问者的下一步是使用具体服务。下面按使用频率列出主要入口及其典型用途，便于按需选择。</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>搜索与资讯</h3>
+          <p>主站搜索框支持网页、图片、视频与新闻检索，结果页可按时间与来源筛选。对多数访客而言，这既是入口也是主要使用场景。</p>
+        </div>
+        <div class="card">
+          <h3>邮箱与账号</h3>
+          <p>邮箱服务与主站账号体系相连，登录后可收发邮件并使用日历、云盘等关联功能。账号相关操作只在官方页面内完成。</p>
+        </div>
+        <div class="card">
+          <h3>地图与出行</h3>
+          <p>地图服务提供地点检索、路线规划与实时路况，部分区域覆盖较细。使用前建议确认当前地区是否有可用数据。</p>
+        </div>
+        <div class="card">
+          <h3>云盘与翻译</h3>
+          <p>云盘用于文件存储与共享，翻译工具支持多语种互译。两者均可从主站导航进入，也可单独访问对应子站。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 访问步骤 -->
+  <section id="steps">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">访问步骤</div>
+        <h2>按顺序确认 yandex官网入口网址</h2>
+        <p>与其反复搜索同一个词，不如建立一套可复用的确认流程。以下四步适用于大多数访问场景，也能减少误入仿冒页面的概率。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h3>确认域名归属</h3>
+            <p>打开页面后先看地址栏域名是否为该公司主域，再看页面是否有完整的官方导航与版权信息。域名拼写有细微差异的页面应直接关闭。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>检查页面语言与地区</h3>
+            <p>主站可能根据地区显示不同语言版本，这属于正常现象。若页面出现与主题无关的弹窗、下载提示或要求输入手机号，应视为异常。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>从主站进入目标服务</h3>
+            <p>需要邮箱、云盘等服务时，优先从主站导航点击进入，而不是点击搜索结果中的跳转链接。这样可以保证始终停留在官方体系内。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>记录可用的访问方式</h3>
+            <p>确认可正常访问后，可将主站首页加入浏览器书签。日后寻找 yandex官网入口网址 时直接打开书签，比重新搜索更可靠。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 辨别提示 -->
+  <section id="safe">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">辨别提示</div>
+        <h2>寻找入口时容易遇到的几类页面</h2>
+        <p>围绕 yandex官网入口网址 的搜索结果中，存在不少以导航、聚合为名的中间页。了解它们的常见特征，可以更快判断是否值得停留。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>多层跳转页</h3>
+          <p>点开一次后仍需再次点击“进入官网”，并伴随大量广告位。真正的入口页通常一次即可到达主站，不需要层层中转。</p>
+        </div>
+        <div class="card">
+          <h3>要求安装插件</h3>
+          <p>以“访问加速”为由要求下载扩展或客户端的页面，与入口本身无关。浏览器直接访问主站即可，无需额外组件。</p>
+        </div>
+        <div class="card">
+          <h3>索要账号密码</h3>
+          <p>任何在非官方域名下要求填写账号密码的页面都应停止操作。正规登录只发生在官方页面内，且地址栏可核对。</p>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-top:22px">
+        <strong>操作建议：</strong>把官方主站设为书签，需要时直接打开；不要通过陌生短链或二维码进入；若页面提示证书异常，先停止输入任何信息，再核对域名拼写。以上做法能覆盖大多数与 yandex官网入口网址 相关的访问风险。
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">常见问题</div>
+        <h2>关于入口的常见疑问</h2>
+        <p>以下问题来自访问者在确认 yandex官网入口网址 时较常遇到的情况，回答仅涉及入口与访问方式，不涉及账号具体操作。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>主站和子站应该从哪个进入？</summary>
+          <div class="ans">建议从主站进入。主站导航包含各子服务的链接，从主站点击可以确保跳转目标属于同一官方体系；直接访问子站则需要额外核对域名。</div>
+        </details>
+        <details>
+          <summary>页面语言不是中文，是否说明进错了？</summary>
+          <div class="ans">不一定。主站会依据访问地区与浏览器语言展示界面，语言不同属于正常的地区适配。判断依据应是域名与页面结构，而不是语言。</div>
+        </details>
+        <details>
+          <summary>打开很慢或无法加载怎么办？</summary>
+          <div class="ans">先刷新并更换网络环境测试，再检查是否为本地网络或浏览器缓存问题。若仅个别页面异常，也可能是该服务在所在地区的可用性差异。</div>
+        </details>
+        <details>
+          <summary>搜索结果里排在前面的就是入口吗？</summary>
+          <div class="ans">排序不等于权威。部分导航站会通过优化占据靠前位置，实际只是中间跳转页。核对域名、查看页面是否有完整官方导航，比看排序更可靠。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <div class="f-brand">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 4h5c2.8 0 4.6 1.7 4.6 4.2 0 2-1.2 3.3-2.9 3.8l3.3 5.4h-3.4l-2.9-5h-1.2v5H8V4zm2.5 2.1v4.2h2.1c1.3 0 2.1-.8 2.1-2.1s-.8-2.1-2.1-2.1h-2.1z" fill="#fff"/></svg>
+          </span>
+          yandex官网入口网址
+        </div>
+        <p style="max-width:30em;color:#9a9da7">围绕 yandex官网入口网址 整理入口确认方法、常用服务路径与访问辨别提示，供访客对照使用。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#entry">入口说明</a></li>
+          <li><a href="#services">常用服务</a></li>
+          <li><a href="#steps">访问步骤</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多内容</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#safe">辨别提示</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>本页为入口信息整理，与相关服务提供方无隶属关系。</span>
+      <span>yandex官网入口网址 · 访问指南</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var b=document.getElementById('burger'),n=document.getElementById('mainnav');
+    if(!b||!n)return;
+    b.addEventListener('click',function(){
+      var open=n.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+    n.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');}
+    });
+  })();
+</script>
+</body>
+</html>
